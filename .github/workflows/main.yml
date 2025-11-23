@@ -19,6 +19,6 @@ jobs:
 
       - name: Copying Files
         run: |
-          rsync -avz --exclude = '.git' --exclude = '.github' ./ ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+          rsync -avz --exclude='.git' --exclude='.github' ./ ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
           
 
