@@ -4,7 +4,8 @@ on:
     branches:
       - main
 jobs:
-  build:
+  building:
+    name: Simple Building
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,6 +20,6 @@ jobs:
 
       - name: Copying Files
         run: |
-          rsync -avz --exclude='.git' --exclude='.github' ./ ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+          rsync -avz --exclude='.git' --exclude='.github' --exclude='.gitignore' ./ ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
           
 
